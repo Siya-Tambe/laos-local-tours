@@ -46,7 +46,7 @@ All interactive effects (hover, shadows, zoom) are CSS-based.
 Mobile optimization ensures images and layout scale properly for smaller screens.
 
 🌟 Credits
-Designed and built by [Your Name]
+Designed and built by Siya Tambe
 AI-assisted design for layout, color choices, and styling guidance
 Images used are placeholders or royalty-free assets (replace with real content as needed)
 
