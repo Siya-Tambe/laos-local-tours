@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Laos Local Tours : Authentic Experiences</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+
+        body {
+    		font-family: 'Poppins', Arial, sans-serif;
+	}
+
+        header {
+    		position: relative;
+    		background: url("hero.jpg") center/cover no-repeat;
+    		color: white;
+    		padding: 100px 20px;
+    		text-align: center;
+    		overflow: hidden;
+	}
+	
+	header::before {
+    		content: "";
+    		position: absolute;
+    		inset: 0;
+    		background: rgba(0, 0, 0, 0.45); /* dark overlay */
+    		backdrop-filter: blur(4px);      /* blur effect */
+    		z-index: 1;
+	}
+	
+	header h1,
+	header p,
+		header .btn {
+    		position: relative;
+    		z-index: 2;
+	}
+
+	header h1 {
+    		font-size: 3.2rem;
+    		font-weight: 800;
+    		letter-spacing: 2px;
+    		text-transform: uppercase;
+    		margin-bottom: 10px;
+    		text-shadow: 0 6px 20px rgba(0, 0, 0, 0.7);
+	}
+
+	header p {
+    		font-size: 1.2rem;
+    		margin-bottom: 25px;
+    		opacity: 0.95;
+    		text-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+	}
+
+        nav {
+            background: #1f4f38;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        section {
+            padding: 24px 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        h1 {
+            color: #2f6f4e;
+            margin-bottom: 12px;
+        }
+
+        .btn {
+    		display: inline-block;
+    		background: #2f6f4e;
+    		color: white;
+    		padding: 12px 28px;
+    		text-decoration: none;
+    		border-radius: 30px;
+    		font-weight: bold;
+    		transition: transform 0.2s ease, box-shadow 0.2s ease;
+	}
+
+	.btn:hover {
+    		transform: translateY(-2px);
+    		box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+	}
+
+        .tours {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .tour-card {
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 6px;
+        }
+
+        .gallery-placeholder {
+            background: #eee;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777;
+            margin-bottom: 15px;
+        }
+	
+.tour-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tour-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* image zoom on hover */
+.tour-img {
+    transition: transform 0.4s ease;
+}
+
+.tour-card:hover .tour-img {
+    transform: scale(1.08);
+}
+	.tour-img {
+    	width: 100%;
+    	height: 180px;          /* controls image height */
+    	object-fit: cover;     /* crops image without distortion */
+    	border-radius: 6px;
+    	margin-bottom: 15px;
+    	display: block;
+	}
+
+	.about-img {
+    	width: 100%;
+    	max-width: 400px;
+    	float: right;
+    	margin: 0 0 20px 20px;
+    	border-radius: 8px;
+	}
+
+        footer {
+            background: #1f4f38;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        footer a {
+            color: #cce8dc;
+            text-decoration: none;
+        }
+	
+	/* Gallery images: subtle shadow only */
+#gallery .tour-card {
+    border: none;
+    padding: 0;
+    box-shadow: none;
+    transform: none;
+}
+
+#gallery .tour-img {
+    transition: box-shadow 0.3s ease;
+}
+
+#gallery .tour-card:hover .tour-img {
+    transform: none; /* disables zoom */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+}
+
+#gallery .tour-img {
+    border-radius: 12px;
+}
+
+/* ===== MOBILE FIXES & RESPONSIVE STYLES (No images hidden) ===== */
+@media (max-width: 768px) {
+
+    /* Hero Section */
+    header {
+        padding: 70px 15px;
+    }
+    header h1 {
+        font-size: 2.2rem;
+    }
+
+    /* About Section Image */
+    .about-img {
+        float: none;          /* remove float */
+        display: block;       
+        max-width: 100%;      
+        margin: 20px auto;    /* center image */
+    }
+
+    /* Tour Cards & Images */
+    .tour-card {
+        transform: none;      /* prevent hover lift issues on mobile */
+    }
+
+    .tour-img {
+        width: 100%;          /* full width */
+        height: auto;         /* maintain aspect ratio */
+        object-fit: cover;
+        transition: box-shadow 0.3s ease; /* subtle shadow on hover */
+    }
+
+    .tour-card:hover .tour-img {
+        transform: none;                       /* disable zoom on mobile */
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18); /* subtle shadow only */
+    }
+
+    /* Grid adjustments for small screens */
+    .tours {
+        grid-template-columns: 1fr; /* one column layout */
+        gap: 16px;
+    }
+
+    /* Section spacing tweaks */
+    section {
+        padding: 20px 15px; /* reduce vertical spacing on mobile */
+    }
+
+    h2 {
+        margin-bottom: 12px; /* tighten heading spacing */
+    }
+}
+
+/* ===== VIEWPORT META TAG ===== */
+/* Make sure you have this in <head> of your HTML: */
+/* <meta name="viewport" content="width=device-width, initial-scale=1.0"> */
+
+	    </style>
+</head>
+<body>
+
+<header>
+    <h1>Laos Local Tours</h1>
+    <p>Authentic Experiences with a Local Guide</p>
+    <a href="#tours" class="btn">View Tours</a>
+</header>
+
+<nav>
+    <a href="#about">About</a>
+    <a href="#tours">Tours</a>
+    <a href="#booking">Booking</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<section id="about">
+    <h1>About Us</h1>
+    <p>
+        Sabaidee! My name is <strong> SIYA </strong>, a licensed local tour guide from Laos.
+        I offer private and small-group tours focused on culture, nature, food, and authentic
+        local experiences.
+    </p>
+    <p>
+        Languages: English, Lao <br>
+        Experience: 5 years <br>
+        Location: Luang Prabang / Vientiane / Pakse
+    </p>
+</section>
+
+<section id="tours">
+    <h1>Our Tours</h1>
+
+    <div class="tours">
+        <div class="tour-card">
+            <img src="luang-parang.jpg" alt="Luang Prabang Highlights Tour" class="tour-img">
+            <h3>Luang Prabang Highlights</h3>
+            <p>Full-day cultural tour including temples, waterfalls, and sunset views.</p>
+            <p><strong>Duration:</strong> Full Day</p>
+            <p><strong>Price:</strong> From $30</p>
+            <a href="#booking" class="btn">Book Now</a>
+        </div>
+
+        <div class="tour-card">
+            <img src="mekong-river.jpg" alt="Mekong River Sunset Cruise" class="tour-img">
+	<h3>Mekong River Sunset Cruise</h3>
+            <p>Relaxing boat cruise with beautiful Mekong River sunset.</p>
+            <p><strong>Duration:</strong> 2–3 Hours</p>
+            <p><strong>Price:</strong> From $10</p>
+            <a href="#booking" class="btn">Book Now</a>
+        </div>
+
+        <div class="tour-card">
+            <img src="lao-food-and-local-market.jpg" alt="Lao food and local market tour" class="tour-img">
+            <h3>Lao Food & Market Tour</h3>
+            <p>Explore local markets and taste traditional Lao dishes.</p>
+            <p><strong>Duration:</strong> Half Day</p>
+            <p><strong>Price:</strong> From $20</p>
+            <a href="#booking" class="btn">Book Now</a>
+        </div>
+    </div>
+</section>
+
+<section id="booking">
+    <h1>Booking</h1>
+    <p>
+        To book a tour or request a custom itinerary, please contact us directly.
+        Online booking system coming soon.
+    </p>
+    <a href="#contact" class="btn">Contact for Booking</a>
+</section>
+
+<section id="reviews">
+    <h1>Guest Reviews</h1>
+    <p>
+        ⭐⭐⭐⭐⭐ <br>
+        “An unforgettable experience! Our guide was friendly and very knowledgeable.”  
+        <br>— Sarah, UK
+    </p>
+
+    <p>
+        ⭐⭐⭐⭐⭐ <br>
+        “The best way to explore Laos. Highly recommended!”  
+        <br>— Mark, USA
+    </p>
+</section>
+
+
+<section id="contact">
+    <h1>Contact Us</h1>
+    <p>Email: siyaXXXX@email.com</p>
+    <p>WhatsApp: +91 907XX XXXXX</p>
+    <p>Based in Laos</p>
+</section>
+
+<section id="gallery">
+    <h1>Tour Gallery</h1>
+
+    <div class="tours">
+        <div class="tour-card">
+            <img src="gallery1.jpg" class="tour-img">
+        </div>
+
+        <div class="tour-card">
+            <img src="gallery2.jpg" class="tour-img">
+        </div>
+
+        <div class="tour-card">
+            <img src="gallery3.jpg" class="tour-img">
+        </div>
+	
+	<div class="tour-card">
+            <img src="gallery4.jpg" class="tour-img">
+        </div>
+		
+	<div class="tour-card">
+            <img src="gallery5.jpg" class="tour-img">
+        </div>
+
+	<div class="tour-card">
+            <img src="gallery6.jpg" class="tour-img">
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p> © 2026 Laos Local Tours</p>
+    <p>
+        <a href="#">Privacy Policy</a> | 
+        <a href="#">Terms & Conditions</a> | 
+        <a href="#">Cancellation Policy</a>
+    </p>
+</footer>
+
+</body>
+</html>
